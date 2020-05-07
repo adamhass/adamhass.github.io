@@ -1,0 +1,271 @@
+<!DOCTYPE html><html><head><title>MPP Suite Index</title><link rel="stylesheet" type="text/css" href="bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="main.css" /><link rel="stylesheet" type="text/css" href="standard.css" /><script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script><script src="https://code.highcharts.com/highcharts.js" crossorigin="anonymous"></script><script src="https://code.highcharts.com/highcharts-more.js" crossorigin="anonymous"></script><script src="https://code.highcharts.com/modules/exporting.js" crossorigin="anonymous"></script><script src="https://code.highcharts.com/modules/export-data.js" crossorigin="anonymous"></script><script src="https://code.highcharts.com/modules/data.js" crossorigin="anonymous"></script><script src="benchmark-suite-plotting.js"></script></head><body><div class="container-fluid"><h1 class="text-center">MPP Suite Experiment Run</h1><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Experiments</a></li><li class="active breadcrumb-item" aria-current="page">Net Throughput Ping Pong</li></ol></nav></div><div class="container-fluid"><h2>Net Throughput Ping Pong</h2><div><div class="navbar navbar-light mpp-navBox flex-column"><div class="mpp-navBoxInner"><h4>Plot Axes</h4><ul class="nav flex-column"><li class="nav-item"><a class="mpp-navLink" href="#parallelism">Parallelism</a></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages">Number of Messages</a></li><li class="nav-item"><a class="mpp-navLink" href="#pipeline-size">Pipelining Depth</a></li></ul></div></div><div><h3 id="parallelism">By Parallelism</h3><div class="navbar navbar-light mpp-navBox flex-column"><div class="mpp-navBoxInner"><h4>Plots</h4><ul class="nav flex-column"><li class="nav-item"><a class="mpp-navLink" href="#parallelism-plot-0">Plot #0</a><span>number of messages per pair = 100000, pipeline size = 10, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#parallelism-plot-1">Plot #1</a><span>number of messages per pair = 100000, pipeline size = 100, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#parallelism-plot-2">Plot #2</a><span>number of messages per pair = 100000, pipeline size = 1000, static = true)</span></li></ul></div></div><div><h4 id="parallelism-plot-0">Plot #0 by Parallelism</h4><div><div>number of messages per pair = 100000, pipeline size = 10, static = true)</div><div id="container-nettppingpong-mpp-100000-ps-10-static-true-calculated"></div><div id="container-nettppingpong-mpp-100000-ps-10-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2294.3337420666667,5474.549798499999,16550.201120799997]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2288.1713043319846, 2300.4961798013487],[5459.514641409266, 5489.5849555907325],[16506.43345985029, 16593.968781749703]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2316.1100667,5501.3848979333325,16652.688067433333]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2309.2449319812963, 2322.975201418704],[5485.816103521529, 5516.953692345136],[16636.221942662763, 16669.154192203903]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2341.730705533334,5600.8506104,16791.755596466668]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2336.079145121504, 2347.382265945164],[5584.127153536198, 5617.574067263801],[16773.303344586806, 16810.20784834653]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2337.214952866666,5540.180197,16735.171093166664]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2329.4670146364324, 2344.9628910968995],[5520.942067321494, 5559.418326678506],[16716.46626240672, 16753.875923926607]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [4279.1228637,15604.557116166667,59933.36222466665]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[4253.80080465162, 4304.444922748381],[15587.280401889502, 15621.833830443831],[59848.76107044722, 60017.96337888608]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [348685.1042339569,584522.9503395484,773404.4986264964]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [345406.72807481996,581671.717098384,768644.6745515035]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [341627.66799344606,571341.7876309798,762278.8413317178]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [342287.7296839024,577598.5412410946,764856.2377247831]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [186954.2019432154,205068.29999582167,213570.5310844705]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'parallelism (number of pairs)', ['4','16','64'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-100000-ps-10-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'parallelism (number of pairs)', ['4','16','64'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-100000-ps-10-static-true-calculated'));
+  </script></div></div><div><h4 id="parallelism-plot-1">Plot #1 by Parallelism</h4><div><div>number of messages per pair = 100000, pipeline size = 100, static = true)</div><div id="container-nettppingpong-mpp-100000-ps-100-static-true-calculated"></div><div id="container-nettppingpong-mpp-100000-ps-100-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1237.0152191,3920.0748940666663,14637.563894133335]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1227.0123388425286, 1247.0180993574713],[3910.740556288487, 3929.4092318448456],[14618.358090718611, 14656.769697548058]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1226.2842635666668,3906.2810802666663,14612.98964453333]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1219.2403212821816, 1233.328205851152],[3898.07623884484, 3914.4859216884925],[14599.66740470823, 14626.31188435843]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1229.8168455333332,3937.088657133333,14543.201166433333]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1223.8730334045867, 1235.7606576620797],[3927.1105859666186, 3947.0667283000475],[14530.57636690838, 14555.825965958285]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1235.1635172666668,3935.4297214666667,14732.750508566669]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1228.0541410416304, 1242.2728934917031],[3924.3656441435714, 3946.493798789762],[14705.095045131802, 14760.405972001536]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3596.7795920000003,14229.66671966666,55371.7294612]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3578.9774516518914, 3614.581732348109],[14201.398996054699, 14257.934443278622],[55313.1170921252, 55430.341830274796]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [646717.9931561765,816310.9344781768,874462.4510319083]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [652377.2862200707,819193.4820475205,875933.009696509]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [650503.3679653859,812783.3225706376,880136.350554185]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [647687.5238108925,813125.942141692,868812.6492440886]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [222421.19082842037,224882.28733968284,231164.89451479385]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'parallelism (number of pairs)', ['4','16','64'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-100000-ps-100-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'parallelism (number of pairs)', ['4','16','64'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-100000-ps-100-static-true-calculated'));
+  </script></div></div><div><h4 id="parallelism-plot-2">Plot #2 by Parallelism</h4><div><div>number of messages per pair = 100000, pipeline size = 1000, static = true)</div><div id="container-nettppingpong-mpp-100000-ps-1000-static-true-calculated"></div><div id="container-nettppingpong-mpp-100000-ps-1000-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1009.7690466999998,3661.0973040000003,14025.818172566667]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1004.3603028147145, 1015.177790585285],[3651.2225226309965, 3670.972085369004],[13990.039513426915, 14061.59683170642]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1001.4452070333332,3643.7739741999994,13868.791988033334]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[996.5721753901681, 1006.3182386764983],[3635.618601750589, 3651.92934664941],[13853.250532312697, 13884.33344375397]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1006.9246768333335,3643.517056433333,14074.635783366666]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1001.8029907375592, 1012.0463629291078],[3633.5186264174536, 3653.5154864492124],[14028.34242785425, 14120.929138879083]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [993.8283723999998,3688.0062729666665,14004.231232866663]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[988.6668292712778, 998.9899155287218],[3679.6225944007883, 3696.3899515325447],[13983.668562346693, 14024.793903386633]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3381.8063805666666,13362.820265499995,53065.65722403333]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3365.8110789942243, 3397.801682139109],[13331.036441182216, 13394.604089817774],[52974.93346379314, 53156.38098427353]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [792260.3714329128,874054.8896375358,912602.7332249134]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [798845.5028607191,878210.3452787761,922935.4662644346]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [794498.3556425604,878272.2711150156,909437.3877245886]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [804967.9624944467,867677.4829414512,914009.4723628641]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [236559.96528871337,239470.4064277307,241210.61849777497]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'parallelism (number of pairs)', ['4','16','64'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-100000-ps-1000-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'parallelism (number of pairs)', ['4','16','64'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-100000-ps-1000-static-true-calculated'));
+  </script></div></div></div><div><h3 id="number-of-messages">By Number of Messages</h3><div class="navbar navbar-light mpp-navBox flex-column"><div class="mpp-navBoxInner"><h4>Plots</h4><ul class="nav flex-column"><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-0">Plot #0</a><span>number of pairs = 4, pipeline size = 10, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-1">Plot #1</a><span>number of pairs = 4, pipeline size = 100, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-2">Plot #2</a><span>number of pairs = 4, pipeline size = 1000, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-3">Plot #3</a><span>number of pairs = 16, pipeline size = 10, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-4">Plot #4</a><span>number of pairs = 16, pipeline size = 100, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-5">Plot #5</a><span>number of pairs = 16, pipeline size = 1000, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-6">Plot #6</a><span>number of pairs = 64, pipeline size = 10, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-7">Plot #7</a><span>number of pairs = 64, pipeline size = 100, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-8">Plot #8</a><span>number of pairs = 64, pipeline size = 1000, static = true)</span></li></ul></div></div><div><h4 id="number-of-messages-plot-0">Plot #0 by Number of Messages</h4><div><div>number of pairs = 4, pipeline size = 10, static = true)</div><div id="container-nettppingpong-np-4-ps-10-static-true-calculated"></div><div id="container-nettppingpong-np-4-ps-10-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2294.3337420666667]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2288.1713043319846, 2300.4961798013487]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2316.1100667]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2309.2449319812963, 2322.975201418704]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2341.730705533334]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2336.079145121504, 2347.382265945164]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2337.214952866666]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2329.4670146364324, 2344.9628910968995]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [4279.1228637]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[4253.80080465162, 4304.444922748381]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [348685.1042339569]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [345406.72807481996]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [341627.66799344606]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [342287.7296839024]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [186954.2019432154]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-4-ps-10-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-4-ps-10-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-1">Plot #1 by Number of Messages</h4><div><div>number of pairs = 4, pipeline size = 100, static = true)</div><div id="container-nettppingpong-np-4-ps-100-static-true-calculated"></div><div id="container-nettppingpong-np-4-ps-100-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1237.0152191]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1227.0123388425286, 1247.0180993574713]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1226.2842635666668]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1219.2403212821816, 1233.328205851152]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1229.8168455333332]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1223.8730334045867, 1235.7606576620797]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1235.1635172666668]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1228.0541410416304, 1242.2728934917031]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3596.7795920000003]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3578.9774516518914, 3614.581732348109]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [646717.9931561765]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [652377.2862200707]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [650503.3679653859]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [647687.5238108925]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [222421.19082842037]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-4-ps-100-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-4-ps-100-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-2">Plot #2 by Number of Messages</h4><div><div>number of pairs = 4, pipeline size = 1000, static = true)</div><div id="container-nettppingpong-np-4-ps-1000-static-true-calculated"></div><div id="container-nettppingpong-np-4-ps-1000-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1009.7690466999998]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1004.3603028147145, 1015.177790585285]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1001.4452070333332]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[996.5721753901681, 1006.3182386764983]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [1006.9246768333335]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[1001.8029907375592, 1012.0463629291078]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [993.8283723999998]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[988.6668292712778, 998.9899155287218]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3381.8063805666666]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3365.8110789942243, 3397.801682139109]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [792260.3714329128]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [798845.5028607191]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [794498.3556425604]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [804967.9624944467]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [236559.96528871337]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-4-ps-1000-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-4-ps-1000-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-3">Plot #3 by Number of Messages</h4><div><div>number of pairs = 16, pipeline size = 10, static = true)</div><div id="container-nettppingpong-np-16-ps-10-static-true-calculated"></div><div id="container-nettppingpong-np-16-ps-10-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [5474.549798499999]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[5459.514641409266, 5489.5849555907325]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [5501.3848979333325]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[5485.816103521529, 5516.953692345136]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [5600.8506104]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[5584.127153536198, 5617.574067263801]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [5540.180197]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[5520.942067321494, 5559.418326678506]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [15604.557116166667]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[15587.280401889502, 15621.833830443831]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [584522.9503395484]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [581671.717098384]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [571341.7876309798]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [577598.5412410946]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [205068.29999582167]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-16-ps-10-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-16-ps-10-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-4">Plot #4 by Number of Messages</h4><div><div>number of pairs = 16, pipeline size = 100, static = true)</div><div id="container-nettppingpong-np-16-ps-100-static-true-calculated"></div><div id="container-nettppingpong-np-16-ps-100-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3920.0748940666663]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3910.740556288487, 3929.4092318448456]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3906.2810802666663]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3898.07623884484, 3914.4859216884925]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3937.088657133333]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3927.1105859666186, 3947.0667283000475]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3935.4297214666667]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3924.3656441435714, 3946.493798789762]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [14229.66671966666]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[14201.398996054699, 14257.934443278622]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [816310.9344781768]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [819193.4820475205]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [812783.3225706376]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [813125.942141692]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [224882.28733968284]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-16-ps-100-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-16-ps-100-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-5">Plot #5 by Number of Messages</h4><div><div>number of pairs = 16, pipeline size = 1000, static = true)</div><div id="container-nettppingpong-np-16-ps-1000-static-true-calculated"></div><div id="container-nettppingpong-np-16-ps-1000-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3661.0973040000003]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3651.2225226309965, 3670.972085369004]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3643.7739741999994]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3635.618601750589, 3651.92934664941]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3643.517056433333]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3633.5186264174536, 3653.5154864492124]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [3688.0062729666665]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[3679.6225944007883, 3696.3899515325447]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [13362.820265499995]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[13331.036441182216, 13394.604089817774]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [874054.8896375358]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [878210.3452787761]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [878272.2711150156]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [867677.4829414512]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [239470.4064277307]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-16-ps-1000-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-16-ps-1000-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-6">Plot #6 by Number of Messages</h4><div><div>number of pairs = 64, pipeline size = 10, static = true)</div><div id="container-nettppingpong-np-64-ps-10-static-true-calculated"></div><div id="container-nettppingpong-np-64-ps-10-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [16550.201120799997]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[16506.43345985029, 16593.968781749703]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [16652.688067433333]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[16636.221942662763, 16669.154192203903]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [16791.755596466668]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[16773.303344586806, 16810.20784834653]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [16735.171093166664]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[16716.46626240672, 16753.875923926607]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [59933.36222466665]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[59848.76107044722, 60017.96337888608]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [773404.4986264964]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [768644.6745515035]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [762278.8413317178]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [764856.2377247831]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [213570.5310844705]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-64-ps-10-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-64-ps-10-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-7">Plot #7 by Number of Messages</h4><div><div>number of pairs = 64, pipeline size = 100, static = true)</div><div id="container-nettppingpong-np-64-ps-100-static-true-calculated"></div><div id="container-nettppingpong-np-64-ps-100-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [14637.563894133335]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[14618.358090718611, 14656.769697548058]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [14612.98964453333]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[14599.66740470823, 14626.31188435843]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [14543.201166433333]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[14530.57636690838, 14555.825965958285]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [14732.750508566669]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[14705.095045131802, 14760.405972001536]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [55371.7294612]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[55313.1170921252, 55430.341830274796]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [874462.4510319083]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [875933.009696509]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [880136.350554185]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [868812.6492440886]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [231164.89451479385]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-64-ps-100-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-64-ps-100-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-8">Plot #8 by Number of Messages</h4><div><div>number of pairs = 64, pipeline size = 1000, static = true)</div><div id="container-nettppingpong-np-64-ps-1000-static-true-calculated"></div><div id="container-nettppingpong-np-64-ps-1000-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [14025.818172566667]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[13990.039513426915, 14061.59683170642]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [13868.791988033334]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[13853.250532312697, 13884.33344375397]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [14074.635783366666]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[14028.34242785425, 14120.929138879083]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [14004.231232866663]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[13983.668562346693, 14024.793903386633]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [53065.65722403333]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[52974.93346379314, 53156.38098427353]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [912602.7332249134]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [922935.4662644346]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [909437.3877245886]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [914009.4723628641]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [241210.61849777497]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['100000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-64-ps-1000-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['100000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-64-ps-1000-static-true-calculated'));
+  </script></div></div></div><div><h3 id="pipeline-size">By Pipelining Depth</h3><div class="navbar navbar-light mpp-navBox flex-column"><div class="mpp-navBoxInner"><h4>Plots</h4><ul class="nav flex-column"><li class="nav-item"><a class="mpp-navLink" href="#pipeline-size-plot-0">Plot #0</a><span>number of messages per pair = 100000, number of pairs = 4, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#pipeline-size-plot-1">Plot #1</a><span>number of messages per pair = 100000, number of pairs = 16, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#pipeline-size-plot-2">Plot #2</a><span>number of messages per pair = 100000, number of pairs = 64, static = true)</span></li></ul></div></div><div><h4 id="pipeline-size-plot-0">Plot #0 by Pipelining Depth</h4><div><div>number of messages per pair = 100000, number of pairs = 4, static = true)</div><div id="container-nettppingpong-mpp-100000-np-4-static-true-calculated"></div><div id="container-nettppingpong-mpp-100000-np-4-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2294.3337420666667,1237.0152191,1009.7690466999998]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2288.1713043319846, 2300.4961798013487],[1227.0123388425286, 1247.0180993574713],[1004.3603028147145, 1015.177790585285]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2316.1100667,1226.2842635666668,1001.4452070333332]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2309.2449319812963, 2322.975201418704],[1219.2403212821816, 1233.328205851152],[996.5721753901681, 1006.3182386764983]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2341.730705533334,1229.8168455333332,1006.9246768333335]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2336.079145121504, 2347.382265945164],[1223.8730334045867, 1235.7606576620797],[1001.8029907375592, 1012.0463629291078]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [2337.214952866666,1235.1635172666668,993.8283723999998]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[2329.4670146364324, 2344.9628910968995],[1228.0541410416304, 1242.2728934917031],[988.6668292712778, 998.9899155287218]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [4279.1228637,3596.7795920000003,3381.8063805666666]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[4253.80080465162, 4304.444922748381],[3578.9774516518914, 3614.581732348109],[3365.8110789942243, 3397.801682139109]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [348685.1042339569,646717.9931561765,792260.3714329128]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [345406.72807481996,652377.2862200707,798845.5028607191]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [341627.66799344606,650503.3679653859,794498.3556425604]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [342287.7296839024,647687.5238108925,804967.9624944467]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [186954.2019432154,222421.19082842037,236559.96528871337]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'pipelining depth', ['10','100','1000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-100000-np-4-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'pipelining depth', ['10','100','1000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-100000-np-4-static-true-calculated'));
+  </script></div></div><div><h4 id="pipeline-size-plot-1">Plot #1 by Pipelining Depth</h4><div><div>number of messages per pair = 100000, number of pairs = 16, static = true)</div><div id="container-nettppingpong-mpp-100000-np-16-static-true-calculated"></div><div id="container-nettppingpong-mpp-100000-np-16-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [5474.549798499999,3920.0748940666663,3661.0973040000003]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[5459.514641409266, 5489.5849555907325],[3910.740556288487, 3929.4092318448456],[3651.2225226309965, 3670.972085369004]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [5501.3848979333325,3906.2810802666663,3643.7739741999994]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[5485.816103521529, 5516.953692345136],[3898.07623884484, 3914.4859216884925],[3635.618601750589, 3651.92934664941]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [5600.8506104,3937.088657133333,3643.517056433333]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[5584.127153536198, 5617.574067263801],[3927.1105859666186, 3947.0667283000475],[3633.5186264174536, 3653.5154864492124]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [5540.180197,3935.4297214666667,3688.0062729666665]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[5520.942067321494, 5559.418326678506],[3924.3656441435714, 3946.493798789762],[3679.6225944007883, 3696.3899515325447]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [15604.557116166667,14229.66671966666,13362.820265499995]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[15587.280401889502, 15621.833830443831],[14201.398996054699, 14257.934443278622],[13331.036441182216, 13394.604089817774]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [584522.9503395484,816310.9344781768,874054.8896375358]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [581671.717098384,819193.4820475205,878210.3452787761]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [571341.7876309798,812783.3225706376,878272.2711150156]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [577598.5412410946,813125.942141692,867677.4829414512]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [205068.29999582167,224882.28733968284,239470.4064277307]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'pipelining depth', ['10','100','1000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-100000-np-16-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'pipelining depth', ['10','100','1000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-100000-np-16-static-true-calculated'));
+  </script></div></div><div><h4 id="pipeline-size-plot-2">Plot #2 by Pipelining Depth</h4><div><div>number of messages per pair = 100000, number of pairs = 64, static = true)</div><div id="container-nettppingpong-mpp-100000-np-64-static-true-calculated"></div><div id="container-nettppingpong-mpp-100000-np-64-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [16550.201120799997,14637.563894133335,14025.818172566667]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[16506.43345985029, 16593.968781749703],[14618.358090718611, 14656.769697548058],[13990.039513426915, 14061.59683170642]]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [16652.688067433333,14612.98964453333,13868.791988033334]},
+{name:'Kompact No Reuse error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[16636.221942662763, 16669.154192203903],[14599.66740470823, 14626.31188435843],[13853.250532312697, 13884.33344375397]]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [16791.755596466668,14543.201166433333,14074.635783366666]},
+{name:'Kompact No Reuse Inbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[16773.303344586806, 16810.20784834653],[14530.57636690838, 14555.825965958285],[14028.34242785425, 14120.929138879083]]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [16735.171093166664,14732.750508566669,14004.231232866663]},
+{name:'Kompact No Reuse Outbound error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[16716.46626240672, 16753.875923926607],[14705.095045131802, 14760.405972001536],[13983.668562346693, 14024.793903386633]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [59933.36222466665,55371.7294612,53065.65722403333]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[59848.76107044722, 60017.96337888608],[55313.1170921252, 55430.341830274796],[52974.93346379314, 53156.38098427353]]}];
+  var secondarySeries = [{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [773404.4986264964,874462.4510319083,912602.7332249134]},
+{name:'Kompact No Reuse',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [768644.6745515035,875933.009696509,922935.4662644346]},
+{name:'Kompact No Reuse Inbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [762278.8413317178,880136.350554185,909437.3877245886]},
+{name:'Kompact No Reuse Outbound',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [764856.2377247831,868812.6492440886,914009.4723628641]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [213570.5310844705,231164.89451479385,241210.61849777497]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'pipelining depth', ['10','100','1000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-100000-np-64-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'pipelining depth', ['10','100','1000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-100000-np-64-static-true-calculated'));
+  </script></div></div></div></div></div></body></html>
