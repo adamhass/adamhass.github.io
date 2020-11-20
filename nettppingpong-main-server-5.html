@@ -1,0 +1,116 @@
+<!DOCTYPE html><html><head><title>MPP Suite Index</title><link rel="stylesheet" type="text/css" href="bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="main.css" /><link rel="stylesheet" type="text/css" href="standard.css" /><script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script><script src="https://code.highcharts.com/highcharts.js" crossorigin="anonymous"></script><script src="https://code.highcharts.com/highcharts-more.js" crossorigin="anonymous"></script><script src="https://code.highcharts.com/modules/exporting.js" crossorigin="anonymous"></script><script src="https://code.highcharts.com/modules/export-data.js" crossorigin="anonymous"></script><script src="https://code.highcharts.com/modules/data.js" crossorigin="anonymous"></script><script src="benchmark-suite-plotting.js"></script></head><body><div class="container-fluid"><h1 class="text-center">MPP Suite Experiment Run</h1><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Experiments</a></li><li class="active breadcrumb-item" aria-current="page">Net Throughput Ping Pong</li></ol></nav></div><div class="container-fluid"><h2>Net Throughput Ping Pong</h2><div><div class="navbar navbar-light mpp-navBox flex-column"><div class="mpp-navBoxInner"><h4>Plot Axes</h4><ul class="nav flex-column"><li class="nav-item"><a class="mpp-navLink" href="#parallelism">Parallelism</a></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages">Number of Messages</a></li><li class="nav-item"><a class="mpp-navLink" href="#pipeline-size">Pipelining Depth</a></li></ul></div></div><div><h3 id="parallelism">By Parallelism</h3><div class="navbar navbar-light mpp-navBox flex-column"><div class="mpp-navBoxInner"><h4>Plots</h4><ul class="nav flex-column"><li class="nav-item"><a class="mpp-navLink" href="#parallelism-plot-0">Plot #0</a>
+
+  <span>number of messages per pair = 50000, pipeline size = 10, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#parallelism-plot-1">Plot #1</a><span>number of messages per pair = 50000, pipeline size = 100, static = true)</span>
+  </li></ul></div></div>
+  <div><h4 id="parallelism-plot-0">Plot #0 by Parallelism</h4>
+    <div>
+      <div>number of messages per pair = 50000, pipeline size = 10 / 100 / 1000)</div>
+      <div id="container-nettppingpong-mpp-50000-ps-10-static-true-calculated"></div>
+      <div id="container-nettppingpong-mpp-50000-ps-10-static-true-primary"></div>
+      <div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div>
+      <script>
+          var primarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [206352.4806,416071.63460000005]},
+            {name:'Erlang error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[205051.2527624434, 207653.70843755663],[415238.6078381702, 416904.6613618299]]},
+            {name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [275835.4174484,628200.806666]},
+            {name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[274264.6260605761, 277406.2088362239],[623092.752009803, 633308.8613221971]]},
+            {name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [292515.35223099997,597453.9284874]},
+            {name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[290968.62045331544, 294062.0840086845],[595578.3489608099, 599329.50801399]]}];
+              var secondarySeries = [
+                {name:'Erlang 10', marker: {symbol: 'triangle'}, color: '#FF0000', dashStyle: 'Dot', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [327154.65, 294382.56, 292258.69, 289899.19, 248119.14, 246111.47]},
+               {name:'Erlang 100', marker: {symbol: 'square'}, color: '#FF0000', dashStyle: 'ShortDash', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [292377.66, 291403.49, 289356.22, 287189.10, 246595.19, 250492.84]},
+              {name:'Erlang 1000', marker: {symbol: 'circle'}, color: '#FF0000', dashStyle: 'Solid', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [277019.60, 259840.36, 185931.89, 318798.47, 321165.26, 254369.16]},
+                {name:'Kompact Tokio 10', marker: {symbol: 'triangle'}, color: '#00FF00', dashStyle: 'Dot', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [164303.94, 171855.37, 177950.03, 177178.35, 175033.55, 171393.97]},
+               {name:'Kompact Tokio 100', marker: {symbol: 'square'}, color: '#00FF00', dashStyle: 'ShortDash', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [172933.16, 167243.54, 178676.71, 186376.70, 95904.82, 370297.62]},
+              {name:'Kompact Tokio 1000', marker: {symbol: 'circle'}, color: '#00FF00', dashStyle: 'Solid', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [189707.97, 196665.08, 199125.51, 198372.03, 195897.44, 198786.74]},
+                {name:'Kompact 10', marker: {symbol: 'triangle'}, color: '#0000FF', dashStyle: 'Dot', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [298418.45, 294282.70, 306405.55, 265333.51, 185617.93, 163005.20]},
+               {name:'Kompact 100', marker: {symbol: 'square'}, color: '#0000FF', dashStyle: 'ShortDash', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [342996.88, 270192.94, 256036.40, 255798.73, 268754.55, 460896.67]},
+              {name:'Kompact 1000', marker: {symbol: 'circle'}, color: '#0000FF', dashStyle: 'Solid', tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [387133.29, 460415.10, 623300.26, 654050.81, 839023.27, 916717.67]}
+              ];
+              //Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'parallelism (number of pairs)', ['512','1024'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-50000-ps-10-static-true-primary'));
+              Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'parallelism (number of pairs)', ['32', '64', '128', '256', '512','1024'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-50000-ps-10-static-true-calculated'));
+      </script>
+</div></div><div><h4 id="parallelism-plot-1">Plot #1 by Parallelism</h4><div><div>number of messages per pair = 50000, pipeline size = 100, static = true)</div><div id="container-nettppingpong-mpp-50000-ps-100-static-true-calculated"></div><div id="container-nettppingpong-mpp-50000-ps-100-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [207627.7334,408794.12760000007]},
+{name:'Erlang error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[206850.04103356315, 208405.42576643685],[394274.1570199798, 423314.09818002034]]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [190508.40287179998,222175.6120276]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[184777.96190232615, 196238.8438412738],[219629.13389529812, 224722.09015990188]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [276534.32000099996,533862.6533494]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [null,[531884.2777432811, 535841.028955519]]}];
+  var secondarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [246595.18823220945,250492.83511282998]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [268754.5495536716,460896.6711759491]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [95904.81686399376,370297.6180303035]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'parallelism (number of pairs)', ['512','1024'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-50000-ps-100-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'parallelism (number of pairs)', ['512','1024'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-50000-ps-100-static-true-calculated'));
+  </script></div></div></div><div><h3 id="number-of-messages">By Number of Messages</h3><div class="navbar navbar-light mpp-navBox flex-column"><div class="mpp-navBoxInner"><h4>Plots</h4><ul class="nav flex-column"><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-0">Plot #0</a><span>number of pairs = 512, pipeline size = 10, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-1">Plot #1</a><span>number of pairs = 512, pipeline size = 100, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-2">Plot #2</a><span>number of pairs = 1024, pipeline size = 10, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#number-of-messages-plot-3">Plot #3</a><span>number of pairs = 1024, pipeline size = 100, static = true)</span></li></ul></div></div><div><h4 id="number-of-messages-plot-0">Plot #0 by Number of Messages</h4><div><div>number of pairs = 512, pipeline size = 10, static = true)</div><div id="container-nettppingpong-np-512-ps-10-static-true-calculated"></div><div id="container-nettppingpong-np-512-ps-10-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [206352.4806]},
+{name:'Erlang error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[205051.2527624434, 207653.70843755663]]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [275835.4174484]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[274264.6260605761, 277406.2088362239]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [292515.35223099997]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[290968.62045331544, 294062.0840086845]]}];
+  var secondarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [248119.13988689892]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [185617.93287324274]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [175033.54818644613]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['50000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-512-ps-10-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['50000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-512-ps-10-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-1">Plot #1 by Number of Messages</h4><div><div>number of pairs = 512, pipeline size = 100, static = true)</div><div id="container-nettppingpong-np-512-ps-100-static-true-calculated"></div><div id="container-nettppingpong-np-512-ps-100-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [207627.7334]},
+{name:'Erlang error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[206850.04103356315, 208405.42576643685]]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [190508.40287179998]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[184777.96190232615, 196238.8438412738]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [276534.32000099996]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[275056.0599976695, 278012.58000433043]]}];
+  var secondarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [246595.18823220945]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [268754.5495536716]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [185148.80901515175]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['50000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-512-ps-100-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['50000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-512-ps-100-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-2">Plot #2 by Number of Messages</h4><div><div>number of pairs = 1024, pipeline size = 10, static = true)</div><div id="container-nettppingpong-np-1024-ps-10-static-true-calculated"></div><div id="container-nettppingpong-np-1024-ps-10-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [416071.63460000005]},
+{name:'Erlang error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[415238.6078381702, 416904.6613618299]]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [628200.806666]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[623092.752009803, 633308.8613221971]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [597453.9284874]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[595578.3489608099, 599329.50801399]]}];
+  var secondarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [246111.4661143497]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [163005.20297555704]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [171393.96883580717]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['50000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-1024-ps-10-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['50000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-1024-ps-10-static-true-calculated'));
+  </script></div></div><div><h4 id="number-of-messages-plot-3">Plot #3 by Number of Messages</h4><div><div>number of pairs = 1024, pipeline size = 100, static = true)</div><div id="container-nettppingpong-np-1024-ps-100-static-true-calculated"></div><div id="container-nettppingpong-np-1024-ps-100-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [408794.12760000007]},
+{name:'Erlang error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[394274.1570199798, 423314.09818002034]]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [222175.6120276]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[219629.13389529812, 224722.09015990188]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [533862.6533494]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[531884.2777432811, 535841.028955519]]}];
+  var secondarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [250492.83511282998]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [460896.6711759491]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [191809.63372798753]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'number of messages per pair', ['50000'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-np-1024-ps-100-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'number of messages per pair', ['50000'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-np-1024-ps-100-static-true-calculated'));
+  </script></div></div></div><div><h3 id="pipeline-size">By Pipelining Depth</h3><div class="navbar navbar-light mpp-navBox flex-column"><div class="mpp-navBoxInner"><h4>Plots</h4><ul class="nav flex-column"><li class="nav-item"><a class="mpp-navLink" href="#pipeline-size-plot-0">Plot #0</a><span>number of messages per pair = 50000, number of pairs = 512, static = true)</span></li><li class="nav-item"><a class="mpp-navLink" href="#pipeline-size-plot-1">Plot #1</a><span>number of messages per pair = 50000, number of pairs = 1024, static = true)</span></li></ul></div></div><div><h4 id="pipeline-size-plot-0">Plot #0 by Pipelining Depth</h4><div><div>number of messages per pair = 50000, number of pairs = 512, static = true)</div><div id="container-nettppingpong-mpp-50000-np-512-static-true-calculated"></div><div id="container-nettppingpong-mpp-50000-np-512-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [206352.4806,207627.7334]},
+{name:'Erlang error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[205051.2527624434, 207653.70843755663],[206850.04103356315, 208405.42576643685]]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [275835.4174484,190508.40287179998]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[274264.6260605761, 277406.2088362239],[184777.96190232615, 196238.8438412738]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [292515.35223099997,276534.32000099996]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[290968.62045331544, 294062.0840086845],[275056.0599976695, 278012.58000433043]]}];
+  var secondarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [248119.13988689892,246595.18823220945]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [185617.93287324274,268754.5495536716]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [175033.54818644613,185148.80901515175]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'pipelining depth', ['10','100'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-50000-np-512-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'pipelining depth', ['10','100'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-50000-np-512-static-true-calculated'));
+  </script></div></div><div><h4 id="pipeline-size-plot-1">Plot #1 by Pipelining Depth</h4><div><div>number of messages per pair = 50000, number of pairs = 1024, static = true)</div><div id="container-nettppingpong-mpp-50000-np-1024-static-true-calculated"></div><div id="container-nettppingpong-mpp-50000-np-1024-static-true-primary"></div><div class="float-right"><button type="button" class="btn btn-secondary btn-sm" onclick="Plotting.backToTop();">back to top</button></div><script>
+  var primarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [416071.63460000005,408794.12760000007]},
+{name:'Erlang error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[415238.6078381702, 416904.6613618299],[394274.1570199798, 423314.09818002034]]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [628200.806666,222175.6120276]},
+{name:'Kompact Actor error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [[623092.752009803, 633308.8613221971],[219629.13389529812, 224722.09015990188]]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [597453.9284874,533862.6533494]},
+{name:'Kompact Tokio error',type:'errorbar',tooltip:{valueDecimals: 2, valueSuffix: 'ms'},data: [null,[531884.2777432811, 535841.028955519]]}];
+  var secondarySeries = [{name:'Erlang',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [246111.4661143497,250492.83511282998]},
+{name:'Kompact Actor',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [163005.20297555704,460896.6711759491]},
+{name:'Kompact Tokio',tooltip:{valueDecimals: 2, valueSuffix: 'msgs/s'},data: [191809.63372798753,171393.96883580717]}];
+  Plotting.plotSeries('Net Throughput Ping Pong (Execution Time)', 'pipelining depth', ['10','100'],'execution time (ms)', primarySeries, document.getElementById('container-nettppingpong-mpp-50000-np-1024-static-true-primary'));
+  Plotting.plotSeries('Net Throughput Ping Pong (Throughput)', 'pipelining depth', ['10','100'],'throughput (msgs/s)', secondarySeries, document.getElementById('container-nettppingpong-mpp-50000-np-1024-static-true-calculated'));
+  </script></div></div></div></div></div></body></html>
